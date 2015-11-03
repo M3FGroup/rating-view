@@ -24,6 +24,12 @@ RatingView
 >>      a function fire after change selected rate element,
 > 8.    hover
 >>      a function fire after hover rate element,
+             
+> ## Available function
+>> 1. setValue()
+>>> function set score to rating view,
+>> 2. getValue()
+>>> function get selected score from rating view,
 > 
 > Here's some example code:
 > 
@@ -38,15 +44,15 @@ RatingView
                  hover: function (data, hoverData) {
                      console.log(data, hoverData);
                  }
-             });
-             
-             
-             
-> ## Available function
->> 1. setValue()
->>> function set score to rating view,
->> 2. getValue()
->>> function get selected score from rating view,
+             });             
+        setTimeout(function(){
+            console.log('Rate value from function: ',ratingView.getValue());
+        },2000);
+    
+    
+        setTimeout(function(){
+            ratingView.setValue(1.5);
+        },4000);
 
 Created By M3F Group
 ======

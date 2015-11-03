@@ -13,7 +13,7 @@
 
 <script>
     var ratingView = new RatingView('.star', {
-        current: 0, totalScore: 10, starCount: 5, direction: 'rtl', color: '#E4A70A', rateClass: {
+        current: 0, totalScore: 5, starCount: 5, direction: 'ltr', color: '#E4A70A', rateClass: {
             full: 'fa fa-star fa-lg',
             half: 'fa fa-star-half-o fa-lg',
             empty: 'fa fa-star-o fa-lg'
@@ -24,6 +24,15 @@
             console.log(data, hoverData);
         }
     });
+
+    setTimeout(function(){
+        console.log('Rate value from function: ',ratingView.getValue());
+    },2000);
+
+
+    setTimeout(function(){
+        ratingView.setValue(1.5);
+    },4000);
 </script>
 </body>
 </html>
