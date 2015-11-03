@@ -1,6 +1,3 @@
-//===== Created By M3F Group =====\\
-==========
-
 RatingView
 =========
 
@@ -42,3 +39,14 @@ RatingView
                      console.log(data, hoverData);
                  }
              });
+             
+             
+             
+> ## Available function
+>> 1. setValue()
+>>> function set score to rating view,
+>> 2. getValue()
+>>> function get selected score from rating view,
+
+Created By M3F Group
+======

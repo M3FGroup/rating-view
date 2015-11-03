@@ -6,7 +6,7 @@ var RatingView = function (element, options) {
     var $starView = $('<div class="star-view">');
     var $starSelector = $('<div class="star-selector" style="display: inline-block;position:absolute;top:0;left:0;">');
     var maxStar = options.starCount || 5;
-    var starValue = options.current || 0;
+    var rateValue = options.current || 0;
     var totalScore = options.totalScore || 10;
     var direction = options.direction || 'ltr';
     var color = options.color || '#E4A70A';
@@ -24,6 +24,9 @@ var RatingView = function (element, options) {
     this.setValue = function (value) {
         renderStar(value);
     };
+    this.getValue = function () {
+        return rateValue;
+    };
 
 //         public
 //        var setValue = function (value) {
@@ -36,7 +39,7 @@ var RatingView = function (element, options) {
 
     function renderStar(selectedValue) {
         if (selectedValue == undefined) {
-            selectedValue = starValue;
+            selectedValue = rateValue;
         }
         var FullStar = Math.floor(selectedValue / (score * 2));
         var HalfStar = Math.round((selectedValue / (score * 2)) % 1);
@@ -90,10 +93,10 @@ var RatingView = function (element, options) {
             $div.css('cursor', 'pointer');
 
             $div.click(function () {
-                starValue = $(this).attr('data-star');
-                renderStar(starValue);
+                rateValue = $(this).attr('data-star');
+                renderStar(rateValue);
                 if (typeof change == 'function')
-                    change(starValue);
+                    change(rateValue);
             });
 
             $div.hover(function () {
@@ -101,7 +104,7 @@ var RatingView = function (element, options) {
                 renderStar(hData);
 
                 if (typeof hover == 'function')
-                    hover(starValue, hData);
+                    hover(rateValue, hData);
             });
 
             $starSelector.append($div);
