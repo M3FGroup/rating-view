@@ -1,6 +1,6 @@
-#//===== Created By M3F Group =====\\#
+##//===== Created By M3F Group =====\\##
 
-#RatingView#
+##RatingView##
 
 > ## Available options.
 > 
