@@ -3,9 +3,9 @@
  */
 var RatingView = function (element, options) {
     var elementStar = $(element);
-    var $starView = $('<div class="star-view">');
-    var $starSelector = $('<div class="star-selector" style="display: inline-block;position:absolute;top:0;left:0;">');
-    var maxStar = options.starCount || 5;
+    var $starView = $('<div class="rate-selector">');
+    var $starSelector = $('<div class="rate-selector" style="display: inline-block;position:absolute;top:0;left:0;">');
+    var maxRate = options.starCount || 5;
     var rateValue = options.current || 0;
     var totalScore = options.totalScore || 10;
     var direction = options.direction || 'ltr';
@@ -15,7 +15,7 @@ var RatingView = function (element, options) {
             half: 'fa fa-star-half-o fa-lg',
             empty: 'fa fa-star-o fa-lg'
         };
-    var score = (totalScore / maxStar) / 2; //each score of each selector element
+    var score = (totalScore / maxRate) / 2; //each score of each selector element
 
     var change = options.change || function () {
         };
@@ -43,7 +43,7 @@ var RatingView = function (element, options) {
         }
         var FullStar = Math.floor(selectedValue / (score * 2));
         var HalfStar = Math.round((selectedValue / (score * 2)) % 1);
-        var EmptyStar = Math.abs(Math.round(selectedValue / (score * 2)) - maxStar) - 1;
+        var EmptyStar = Math.abs(Math.round(selectedValue / (score * 2)) - maxRate) - 1;
 
         //var $tempDiv=$('<div>');
         $starView.html('');
@@ -78,14 +78,14 @@ var RatingView = function (element, options) {
     function selectorCreate() {
         var width = $starView.width() - 2;
         var height = $starView.height();
-        var selectorWidth = width / ((maxStar * 2) + 1);
+        var selectorWidth = width / ((maxRate * 2) + 1);
         var selectorHeight = height + 5;
 
         $starSelector.height(height);
         $starSelector.width(width);
 
         var currentScore = 0;
-        for (var i = 0; i < (maxStar * 2) + 1; i++) {
+        for (var i = 0; i < (maxRate * 2) + 1; i++) {
             var $div = $('<div data-star="' + currentScore + '">');
             $div.width(selectorWidth);
             $div.height(selectorHeight);
