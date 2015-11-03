@@ -5,7 +5,7 @@ var RatingView = function (element, options) {
     var elementStar = $(element);
     var $starView = $('<div class="rate-selector">');
     var $starSelector = $('<div class="rate-selector" style="display: inline-block;position:absolute;top:0;left:0;">');
-    var maxRate = options.starCount || 5;
+    var maxRate = options.rateCount || 5;
     var rateValue = options.current || 0;
     var totalScore = options.totalScore || 10;
     var direction = options.direction || 'ltr';
