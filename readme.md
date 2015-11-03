@@ -48,8 +48,6 @@ RatingView
         setTimeout(function(){
             console.log('Rate value from function: ',ratingView.getValue());
         },2000);
-    
-    
         setTimeout(function(){
             ratingView.setValue(1.5);
         },4000);
