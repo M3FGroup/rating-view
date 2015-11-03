@@ -1,6 +1,8 @@
-##//===== Created By M3F Group =====\\##
+//===== Created By M3F Group =====\\
+==========
 
-##RatingView##
+RatingView
+=========
 
 > ## Available options.
 > 
@@ -28,7 +30,7 @@
 > 
 > Here's some example code:
 > 
->>     ``var ratingView = new RatingView('.star', {
+>>     var ratingView = new RatingView('.star', {
                  current: 0, totalScore: 10, starCount: 5, direction: 'rtl', color: '#E4A70A', rateClass: {
                      full: 'fa fa-star fa-lg',
                      half: 'fa fa-star-half-o fa-lg',
@@ -39,4 +41,4 @@
                  hover: function (data, hoverData) {
                      console.log(data, hoverData);
                  }
-             });``
+             });
