@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="dist/jquery.2.0.3.min.js"></script>
+    <script src="dist/rating-view.min.js"></script>
+    <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+
+<div class="star"></div>
+
+<script>
+    var ratingView = new RatingView('.star', {
+        current: 0, totalScore: 10, starCount: 5, direction: 'rtl', color: '#E4A70A', rateClass: {
+            full: 'fa fa-star fa-lg',
+            half: 'fa fa-star-half-o fa-lg',
+            empty: 'fa fa-star-o fa-lg'
+        }, change: function (data) {
+            console.log(data);
+        },
+        hover: function (data, hoverData) {
+            console.log(data, hoverData);
+        }
+    });
+</script>
+</body>
+</html>
