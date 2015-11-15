@@ -10,6 +10,7 @@ var RatingView = function (element, options) {
     var totalScore = options.totalScore || 10;
     var direction = options.direction || 'ltr';
     var color = options.color || '#E4A70A';
+    var readonly = options.readonly || false;
     var rateClass = options.rateClass || {
             full: 'fa fa-star fa-lg',
             half: 'fa fa-star-half-o fa-lg',
@@ -90,23 +91,24 @@ var RatingView = function (element, options) {
             $div.width(selectorWidth);
             $div.height(selectorHeight);
             $div.css('display', 'inline-block');
-            $div.css('cursor', 'pointer');
 
-            $div.click(function () {
-                rateValue = $(this).attr('data-star');
-                renderStar(rateValue);
-                if (typeof change == 'function')
-                    change(rateValue);
-            });
+            if (!readonly) {
+                $div.css('cursor', 'pointer');
+                $div.click(function () {
+                    rateValue = $(this).attr('data-star');
+                    renderStar(rateValue);
+                    if (typeof change == 'function')
+                        change(rateValue);
+                });
 
-            $div.hover(function () {
-                var hData = $(this).attr('data-star');
-                renderStar(hData);
+                $div.hover(function () {
+                    var hData = $(this).attr('data-star');
+                    renderStar(hData);
 
-                if (typeof hover == 'function')
-                    hover(rateValue, hData);
-            });
-
+                    if (typeof hover == 'function')
+                        hover(rateValue, hData);
+                });
+            }
             $starSelector.append($div);
             currentScore += score;
         }

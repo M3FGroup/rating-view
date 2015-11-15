@@ -24,6 +24,8 @@ RatingView
 >>      a function fire after change selected rate element,
 > 8.    hover
 >>      a function fire after hover rate element,
+> 9.    readonly
+>>      readonly option, if set true, rating view, can not set data in view, but can set with program
              
 > ## Available function
 >> 1. setValue()
