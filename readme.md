@@ -7,8 +7,8 @@ RatingView
 >>      set current rate to Rating View
 > 2.    totalScore
 >>      set total score, max of score
-> 3.    starCount
->>      set how much of star to render
+> 3.    rateCount
+>>      set how much of rate to render
 > 4.    direction
 >>      set direction rtl|ltr
 > 5.    color
@@ -36,7 +36,7 @@ RatingView
 > Here's some example code:
 > 
 >>     var ratingView = new RatingView('.star', {
-                 current: 0, totalScore: 10, starCount: 5, direction: 'rtl', color: '#E4A70A', rateClass: {
+                 current: 0, totalScore: 10, rateCount: 5, direction: 'rtl', color: '#E4A70A', rateClass: {
                      full: 'fa fa-star fa-lg',
                      half: 'fa fa-star-half-o fa-lg',
                      empty: 'fa fa-star-o fa-lg'

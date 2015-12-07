@@ -3,8 +3,8 @@
  */
 var RatingView = function (element, options) {
     var elementStar = $(element);
-    var $starView = $('<div class="rate-selector">');
-    var $starSelector = $('<div class="rate-selector" style="display: inline-block;position:absolute;top:0;left:0;">');
+    var $rateView = $('<div class="rate-view">');
+    var $rateSelector = $('<div class="rate-selector" style="display: inline-block;position:absolute;top:0;">');
     var maxRate = options.rateCount || 5;
     var rateValue = options.current || 0;
     var totalScore = options.totalScore || 10;
@@ -47,12 +47,12 @@ var RatingView = function (element, options) {
         var EmptyStar = Math.abs(Math.round(selectedValue / (score * 2)) - maxRate) - 1;
 
         //var $tempDiv=$('<div>');
-        $starView.html('');
+        $rateView.html('');
         for (var j = 0; j <= EmptyStar; j++) {
             var $emptyDiv = $('<div>')
                 .css('color', color)
                 .addClass(rateClass.empty);
-            $starView.prepend($emptyDiv);
+            $rateView.prepend($emptyDiv);
             //data += '<div style="color: #E4A70A;" class="fa fa-star-o fa-lg"></div>';
         }
         if (HalfStar > 0) {
@@ -61,7 +61,7 @@ var RatingView = function (element, options) {
                 .addClass(rateClass.half);
             if (direction == 'rtl')
                 $halfDiv.css('transform', 'rotateY(180deg)');
-            $starView.prepend($halfDiv);
+            $rateView.prepend($halfDiv);
 
             //data += '<div style="color: #E4A70A;" class="fa fa-star-half-o fa-lg"></div>';
         }
@@ -69,21 +69,26 @@ var RatingView = function (element, options) {
             var $fullDiv = $('<div>')
                 .css('color', color)
                 .addClass(rateClass.full);
-            $starView.prepend($fullDiv);
+            $rateView.prepend($fullDiv);
             //data += '<div style="color: #E4A70A;" class="fa fa-star fa-lg"></div>';
         }
-        //$starView.html($tempDiv);
+        //$rateView.html($tempDiv);
 
     }
 
     function selectorCreate() {
-        var width = $starView.width() + 2;
-        var height = $starView.height();
+        if (direction == 'ltr') {
+            $rateSelector.css('left', 0);
+        } else if (direction == 'rtl') {
+            $rateSelector.css('right', 0);
+        }
+        var width = $rateView.width();
+        var height = $rateView.height();
         var selectorWidth = width / ((maxRate * 2) + 1);
         var selectorHeight = height + 5;
 
-        $starSelector.height(height);
-        $starSelector.width(width);
+        $rateSelector.width(width + selectorWidth);
+        $rateSelector.height(height);
 
         var currentScore = 0;
         for (var i = 0; i < (maxRate * 2) + 1; i++) {
@@ -109,11 +114,11 @@ var RatingView = function (element, options) {
                         hover(rateValue, hData);
                 });
             }
-            $starSelector.append($div);
+            $rateSelector.append($div);
             currentScore += score;
         }
 
-        $starSelector.mouseout(function () {
+        $rateSelector.mouseout(function () {
             renderStar();
         });
     }
@@ -124,9 +129,9 @@ var RatingView = function (element, options) {
 
 
         renderStar();
-        elementStar.append($starView);
+        elementStar.append($rateView);
         selectorCreate();
-        elementStar.append($starSelector);
+        elementStar.append($rateSelector);
         elementStar.css('direction', direction);
     }
 
