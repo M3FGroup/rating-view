@@ -77,7 +77,7 @@ var RatingView = function (element, options) {
     }
 
     function selectorCreate() {
-        var width = $starView.width() - 2;
+        var width = $starView.width() + 2;
         var height = $starView.height();
         var selectorWidth = width / ((maxRate * 2) + 1);
         var selectorHeight = height + 5;
