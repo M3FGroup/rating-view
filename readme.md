@@ -1,7 +1,7 @@
 RatingView
 =========
 
-> ## Available options.
+## Available options.
 > 
 > 1.    current
 >>      set current rate to Rating View
@@ -27,7 +27,7 @@ RatingView
 > 9.    readonly
 >>      readonly option, if set true, rating view, can not set data in view, but can set with program
              
-> ## Available function
+## Available function
 >> 1. setValue()
 >>> function set score to rating view,
 >> 2. getValue()
@@ -54,5 +54,4 @@ RatingView
             ratingView.setValue(1.5);
         },4000);
 
-Created By M3F Group
-======
+## Created By M3F Group
