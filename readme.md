@@ -28,9 +28,9 @@ RatingView
 >>      readonly option, if set true, rating view, can not set data in view, but can set with program
              
 ## Available function
->> 1. setValue()
+>>1. setValue()
 >>> function set score to rating view,
->> 2. getValue()
+>>2. getValue()
 >>> function get selected score from rating view,
 > 
 > Here's some example code:
