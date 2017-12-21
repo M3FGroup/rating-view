@@ -2,30 +2,30 @@ RatingView
 =========
 
 ## Available options.
-> 
+ 
 > 1.    current
->      set current rate to Rating View
+      set current rate to Rating View
 > 2.    totalScore
->      set total score, max of score
+      set total score, max of score
 > 3.    rateCount
->      set how much of rate to render
+      set how much of rate to render
 > 4.    direction
->      set direction rtl|ltr
+     set direction rtl|ltr
 > 5.    color
->      set color of each rate element
+     set color of each rate element
 > 6.    rateClass
 > 6.1.    full
->>     set class for each full rate element
+     set class for each full rate element
 > 6.2.    half
->     set class for each half rate element
+    set class for each half rate element
 > 6.3.    empty
->     set class for each empty rate element
+    set class for each empty rate element
 > 7.    change
->      a function fire after change selected rate element,
+    a function fire after change selected rate element,
 > 8.    hover
->      a function fire after hover rate element,
+    a function fire after hover rate element,
 > 9.    readonly
->      readonly option, if set true, rating view, can not set data in view, but can set with program
+    readonly option, if set true, rating view, can not set data in view, but can set with program
              
 ## Available function
 >1. setValue()
